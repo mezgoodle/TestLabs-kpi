@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Reference Include="IIG.PasswordHashingUtils">
-      <HintPath>..\..\..\..\Downloads\IIG.PasswordHashingUtils-20210329T082309Z-001\IIG.PasswordHashingUtils\IIG.PasswordHashingUtils.dll</HintPath>
+      <HintPath>..\.\IIG.PasswordHashingUtils\IIG.PasswordHashingUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
 
