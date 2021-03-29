@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="IIG.PasswordHashingUtils">
+      <HintPath>..\..\..\..\Downloads\IIG.PasswordHashingUtils-20210329T082309Z-001\IIG.PasswordHashingUtils\IIG.PasswordHashingUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
