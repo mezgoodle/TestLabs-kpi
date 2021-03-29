@@ -10,7 +10,7 @@ namespace Lab2
         /// Test init default proccess with parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithFullParams()
+        public void FullParams_Initialization_NotNull()
         {
             PasswordHasher.Init("hanzo", 14);
             string password = PasswordHasher.GetHash("genji");
@@ -21,7 +21,7 @@ namespace Lab2
         /// Test init default proccess with cyrillic parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithFullParamsCyrillic()
+        public void CyrillicParams_Initialization_NotNull()
         {
             PasswordHasher.Init("Хандзо", 14);
             string password = PasswordHasher.GetHash("genji");
@@ -32,7 +32,7 @@ namespace Lab2
         /// Test init default proccess with special parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithFullParamsSpecial()
+        public void SpecialParams_Initialization_NotNull()
         {
             PasswordHasher.Init("\n\r", 14);
             string password = PasswordHasher.GetHash("genji");
@@ -43,7 +43,7 @@ namespace Lab2
         /// Test init default proccess with emojies in parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithFullParamsEmojies()
+        public void EmojieParams_Initialization_NotNull()
         {
             PasswordHasher.Init("😀😀😀😀", 14);
             string password = PasswordHasher.GetHash("genji");
@@ -54,7 +54,7 @@ namespace Lab2
         /// Test init default proccess with hieroglyphies in parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithFullParamsHieroglyphies()
+        public void HieroglyphiesParams_Initialization_NotNull()
         {
             PasswordHasher.Init("汉字漢字", 14);
             string password = PasswordHasher.GetHash("genji");
@@ -65,7 +65,7 @@ namespace Lab2
         /// Test init default proccess with random adler in parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithFullParamsRandomAdler()
+        public void RandomAlert_Initialization_NotNull()
         {
             Random adler = new Random();
             PasswordHasher.Init("hanzo", (uint)adler.Next());
@@ -77,7 +77,7 @@ namespace Lab2
         /// Test init default proccess with blank parameters
         /// </summary>
         [Fact]
-        public void TestInitializationWithBlankParams()
+        public void BlankParams_Initialization_NotNull()
         {
             PasswordHasher.Init("", 0);
             string password = PasswordHasher.GetHash("genji");
@@ -88,7 +88,7 @@ namespace Lab2
         /// Test init proccess in GetHash method
         /// </summary>
         [Fact]
-        public void TestDirectInitialization()
+        public void DirectParams_Initialization_NotNull()
         {
             string password = PasswordHasher.GetHash("genji", "hanzo", 14);
             Assert.NotNull(password);
@@ -98,7 +98,7 @@ namespace Lab2
         /// Test init proccess in method and outside
         /// </summary>
         [Fact]
-        public void CompareDifferentInitializations()
+        public void CompareDifference_Initialization_NotNull()
         {
             string first_password = PasswordHasher.GetHash("genji");
             Assert.NotNull(first_password);
@@ -115,7 +115,7 @@ namespace Lab2
         /// Test default hashing proccess without parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithoutParams()
+        public void WithoutParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("genji");
             Assert.NotNull(password);
@@ -125,7 +125,7 @@ namespace Lab2
         /// Test default hashing proccess with parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithParams()
+        public void WithParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("genji", "hanzo", 14);
             Assert.NotNull(password);
@@ -135,7 +135,7 @@ namespace Lab2
         /// Test default hashing proccess with blank parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithBlankParams()
+        public void BlankParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("", "", 14);
             Assert.NotNull(password);
@@ -145,7 +145,7 @@ namespace Lab2
         /// Test default hashing proccess with cyrilic parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithCyrillicParams()
+        public void CyrillicParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("Мей", "Ангел", 14);
             Assert.NotNull(password);
@@ -155,7 +155,7 @@ namespace Lab2
         /// Test default hashing proccess with hieroglyphies parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithHieroglyphiesParams()
+        public void HieroglyphiesParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("汉字漢字", "字漢字字字字字字", 14);
             Assert.NotNull(password);
@@ -165,7 +165,7 @@ namespace Lab2
         /// Test default hashing proccess with special parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithSpecialParams()
+        public void SpecialParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("\n/n", "\r/r", 14);
             Assert.NotNull(password);
@@ -175,7 +175,7 @@ namespace Lab2
         /// Test default hashing proccess with emojies parameters
         /// </summary>
         [Fact]
-        public void TestHashingWithEmojies()
+        public void EmojieParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("😄 😁 😆 😅", "😄 😁 😆 😅", 14);
             Assert.NotNull(password);
@@ -185,7 +185,7 @@ namespace Lab2
         /// Test default hashing proccess with random adler
         /// </summary>
         [Fact]
-        public void TestHashingWithRandomAdler()
+        public void RandomAdler_Hashing_NotNull()
         {
             Random adler = new Random();
             string password = PasswordHasher.GetHash("genji", "hanzo", (uint)adler.Next());
@@ -196,7 +196,7 @@ namespace Lab2
         /// Test hashing proccess with null parameters in init
         /// </summary>
         [Fact]
-        public void TestHashingWithNullParams()
+        public void NullParams_Hashing_NotNull()
         {
             string password = PasswordHasher.GetHash("genji", null, null);
             Assert.NotNull(password);
@@ -206,7 +206,7 @@ namespace Lab2
         /// Test hashing proccess with previous init and blank params in next hashing
         /// </summary>
         [Fact]
-        public void TestHashingWithPreviousInit_AndZeroParams()
+        public void PrevoiusInitZeroParams_Hashing_NotNull()
         {
             string password_with_params = PasswordHasher.GetHash("genji", "hanzo", 13);
             Assert.NotNull(password_with_params);
@@ -219,7 +219,7 @@ namespace Lab2
         /// Test hashing proccess with same parameter after another init
         /// </summary>
         [Fact]
-        public void TestHashingWithPrevoiusInit_AndOneParam()
+        public void PrevoiusInitOneParam_Hashing_NotNull()
         {
             string password_with_params = PasswordHasher.GetHash("genji", "hanzo", 13);
             string password_without_params = PasswordHasher.GetHash("genji");
@@ -232,7 +232,7 @@ namespace Lab2
         /// Test hashing proccess with different parameter after another init
         /// </summary>
         [Fact]
-        public void TestHashingWithPrevoiusInit_AndOneAnotherParam()
+        public void PrevoiusInitAnotherParam_Hashing_NotNull()
         {
             string password_without_params = PasswordHasher.GetHash("genji");
             string password_with_one_param = PasswordHasher.GetHash("genji", "tracer");
