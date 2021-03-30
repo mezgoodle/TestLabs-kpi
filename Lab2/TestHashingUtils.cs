@@ -6,13 +6,15 @@ namespace Lab2
 {
     public class TestHashingUtils_Initialization
     {
+        public const int adler = 14;
+
         /// <summary>
         /// Test init default proccess with parameters
         /// </summary>
         [Fact]
         public void FullParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("hanzo", 14);
+            PasswordHasher.Init("hanzo", adler);
             const string password = PasswordHasher.GetHash("genji");
             Assert.NotNull(password);
         }
