@@ -1,12 +1,19 @@
-﻿using System;
+﻿using IIG.PasswordHashingUtils;
+using System;
 using Xunit;
-using IIG.PasswordHashingUtils;
 
 namespace Lab2
 {
     public class TestHashingUtils_Initialization
     {
-        public const int adler = 14;
+        private const int adler = 14;
+        private string salt = "hanzo";
+        private string salt_cyrrilic = "Хандзо";
+        private string salt_special = "\n\r";
+        private string salt_emojies = "😀😀😀😀";
+        private string salt_hieroglyphies = "汉字漢字";
+        private string salt_another = "widowmaker";
+        private string hash_string = "genji";
 
         /// <summary>
         /// Test init default proccess with parameters
@@ -14,8 +21,8 @@ namespace Lab2
         [Fact]
         public void FullParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("hanzo", adler);
-            const string password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt, adler);
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -25,8 +32,8 @@ namespace Lab2
         [Fact]
         public void CyrillicParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("Хандзо", 14);
-            const string password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt_cyrrilic, adler);
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -36,8 +43,8 @@ namespace Lab2
         [Fact]
         public void SpecialParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("\n\r", 14);
-            const string password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt_special, adler);
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -47,8 +54,8 @@ namespace Lab2
         [Fact]
         public void EmojieParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("😀😀😀😀", 14);
-            const string password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt_emojies, adler);
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -58,8 +65,8 @@ namespace Lab2
         [Fact]
         public void HieroglyphiesParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("汉字漢字", 14);
-            const string password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt_hieroglyphies, adler);
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -70,8 +77,8 @@ namespace Lab2
         public void RandomAlert_Initialization_NotNull()
         {
             Random adler = new Random();
-            PasswordHasher.Init("hanzo", (uint)adler.Next());
-            const string password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt, (uint)adler.Next());
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -82,7 +89,7 @@ namespace Lab2
         public void BlankParams_Initialization_NotNull()
         {
             PasswordHasher.Init("", 0);
-            const string password = PasswordHasher.GetHash("genji");
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -92,7 +99,7 @@ namespace Lab2
         [Fact]
         public void DirectParams_Initialization_NotNull()
         {
-            const string password = PasswordHasher.GetHash("genji", "hanzo", 14);
+            string password = PasswordHasher.GetHash(hash_string, salt, adler);
             Assert.NotNull(password);
         }
 
@@ -102,10 +109,10 @@ namespace Lab2
         [Fact]
         public void CompareDifference_Initialization_NotNull()
         {
-            const string first_password = PasswordHasher.GetHash("genji");
+            string first_password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(first_password);
-            PasswordHasher.Init("widowmaker", 14);
-            const string second_password = PasswordHasher.GetHash("genji");
+            PasswordHasher.Init(salt_another, adler);
+            string second_password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(second_password);
             Assert.NotEqual(first_password, second_password);
         }
@@ -113,13 +120,25 @@ namespace Lab2
 
     public class TestHashingUtils_Hashing
     {
+        private const int adler = 14;
+        private string salt = "hanzo";
+        private string salt_cyrrilic = "Хандзо";
+        private string salt_cyrrilic_1 = "Ангел";
+        private string salt_special = "\n\r";
+        private string salt_special_1 = "\r/r";
+        private string salt_emojies = "😀😀😀😀";
+        private string salt_emojies_1 = "😄 😁 😆 😅";
+        private string salt_hieroglyphies = "汉字漢字";
+        private string salt_hieroglyphies_1 = "字漢字字字字字字";
+        private string salt_another = "tracer";
+        private string hash_string = "genji";
         /// <summary>
         /// Test default hashing proccess without parameters
         /// </summary>
         [Fact]
         public void WithoutParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("genji");
+            string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
 
@@ -129,7 +148,7 @@ namespace Lab2
         [Fact]
         public void WithParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("genji", "hanzo", 14);
+            string password = PasswordHasher.GetHash(hash_string, salt, adler);
             Assert.NotNull(password);
         }
 
@@ -139,7 +158,7 @@ namespace Lab2
         [Fact]
         public void BlankParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("", "", 14);
+            string password = PasswordHasher.GetHash("", "", adler);
             Assert.NotNull(password);
         }
 
@@ -149,7 +168,7 @@ namespace Lab2
         [Fact]
         public void CyrillicParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("Мей", "Ангел", 14);
+            string password = PasswordHasher.GetHash(salt_cyrrilic, salt_cyrrilic_1, adler);
             Assert.NotNull(password);
         }
 
@@ -159,7 +178,7 @@ namespace Lab2
         [Fact]
         public void HieroglyphiesParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("汉字漢字", "字漢字字字字字字", 14);
+            string password = PasswordHasher.GetHash(salt_hieroglyphies, salt_hieroglyphies_1, adler);
             Assert.NotNull(password);
         }
 
@@ -169,7 +188,7 @@ namespace Lab2
         [Fact]
         public void SpecialParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("\n/n", "\r/r", 14);
+            string password = PasswordHasher.GetHash(salt_special, salt_special_1, adler);
             Assert.NotNull(password);
         }
 
@@ -179,7 +198,7 @@ namespace Lab2
         [Fact]
         public void EmojieParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("😄 😁 😆 😅", "😄 😁 😆 😅", 14);
+            string password = PasswordHasher.GetHash(salt_emojies, salt_emojies_1, adler);
             Assert.NotNull(password);
         }
 
@@ -190,7 +209,7 @@ namespace Lab2
         public void RandomAdler_Hashing_NotNull()
         {
             Random adler = new Random();
-            const string password = PasswordHasher.GetHash("genji", "hanzo", (uint)adler.Next());
+            string password = PasswordHasher.GetHash(hash_string, salt, (uint)adler.Next());
             Assert.NotNull(password);
         }
 
@@ -200,7 +219,7 @@ namespace Lab2
         [Fact]
         public void NullParams_Hashing_NotNull()
         {
-            const string password = PasswordHasher.GetHash("genji", null, null);
+            string password = PasswordHasher.GetHash(hash_string, null, null);
             Assert.NotNull(password);
         }
 
@@ -210,9 +229,9 @@ namespace Lab2
         [Fact]
         public void PrevoiusInitZeroParams_Hashing_NotNull()
         {
-            const string password_with_params = PasswordHasher.GetHash("genji", "hanzo", 13);
+            string password_with_params = PasswordHasher.GetHash(hash_string, salt, 13);
             Assert.NotNull(password_with_params);
-            const string password_without_params = PasswordHasher.GetHash("genji");
+            string password_without_params = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password_without_params);
             Assert.Equal(password_with_params, password_without_params);
         }
@@ -223,9 +242,9 @@ namespace Lab2
         [Fact]
         public void PrevoiusInitOneParam_Hashing_NotNull()
         {
-            const string password_with_params = PasswordHasher.GetHash("genji", "hanzo", 13);
-            const string password_without_params = PasswordHasher.GetHash("genji");
-            const string password_with_one_param = PasswordHasher.GetHash("genji", "hanzo");
+            string password_with_params = PasswordHasher.GetHash(hash_string, salt, adler-1);
+            string password_without_params = PasswordHasher.GetHash(hash_string);
+            string password_with_one_param = PasswordHasher.GetHash(hash_string, salt);
             Assert.Equal(password_with_params, password_with_one_param);
             Assert.Equal(password_without_params, password_with_one_param);
         }
@@ -236,9 +255,9 @@ namespace Lab2
         [Fact]
         public void PrevoiusInitAnotherParam_Hashing_NotNull()
         {
-            const string password_without_params = PasswordHasher.GetHash("genji");
-            const string password_with_one_param = PasswordHasher.GetHash("genji", "tracer");
-            const string password_without_params_1 = PasswordHasher.GetHash("genji");
+            string password_without_params = PasswordHasher.GetHash(hash_string);
+            string password_with_one_param = PasswordHasher.GetHash(hash_string, salt_another);
+            string password_without_params_1 = PasswordHasher.GetHash(hash_string);
             Assert.Equal(password_without_params_1, password_with_one_param);
             Assert.NotEqual(password_without_params_1, password_without_params);
         }
