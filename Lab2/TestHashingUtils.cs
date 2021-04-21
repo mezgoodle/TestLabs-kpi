@@ -74,10 +74,32 @@ namespace Lab2
         /// Test init default proccess with random adler in parameters
         /// </summary>
         [Fact]
-        public void RandomAlert_Initialization_NotNull()
+        public void RandomAdler_Initialization_NotNull()
         {
             Random adler = new Random();
             PasswordHasher.Init(salt, (uint)adler.Next());
+            string password = PasswordHasher.GetHash(hash_string);
+            Assert.NotNull(password);
+        }
+
+        /// <summary>
+        /// Test init default proccess with maximum limit adler in parameters
+        /// </summary>
+        [Fact]
+        public void MaximumLimitAdler_Initialization_NotNull()
+        {
+            PasswordHasher.Init(salt, uint.MaxValue);
+            string password = PasswordHasher.GetHash(hash_string);
+            Assert.NotNull(password);
+        }
+
+        /// <summary>
+        /// Test init default proccess with minimum limit adler in parameters
+        /// </summary>
+        [Fact]
+        public void MinimumLimitAdler_Initialization_NotNull()
+        {
+            PasswordHasher.Init(salt, uint.MinValue);
             string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
@@ -88,7 +110,7 @@ namespace Lab2
         [Fact]
         public void BlankParams_Initialization_NotNull()
         {
-            PasswordHasher.Init("", 0);
+            PasswordHasher.Init(null, 0);
             string password = PasswordHasher.GetHash(hash_string);
             Assert.NotNull(password);
         }
@@ -210,6 +232,26 @@ namespace Lab2
         {
             Random adler = new Random();
             string password = PasswordHasher.GetHash(hash_string, salt, (uint)adler.Next());
+            Assert.NotNull(password);
+        }
+
+        /// <summary>
+        /// Test default hashing proccess with maximum adler
+        /// </summary>
+        [Fact]
+        public void MaximumLimitAdler_Hashing_NotNull()
+        {
+            string password = PasswordHasher.GetHash(hash_string, salt, uint.MaxValue);
+            Assert.NotNull(password);
+        }
+
+        /// <summary>
+        /// Test default hashing proccess with minimum adler
+        /// </summary>
+        [Fact]
+        public void MinimumLimitAdler_Hashing_NotNull()
+        {
+            string password = PasswordHasher.GetHash(hash_string, salt, uint.MinValue);
             Assert.NotNull(password);
         }
 
