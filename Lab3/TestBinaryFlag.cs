@@ -13,7 +13,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, true);
+                    MultipleBinaryFlag obj = new(65 + 1, true);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -26,7 +26,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
+                    MultipleBinaryFlag obj = new(65 + 1, false);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -39,7 +39,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(64, true);
+                    MultipleBinaryFlag obj = new(64, true);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -52,7 +52,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(64, false);
+                    MultipleBinaryFlag obj = new(64, false);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -65,7 +65,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(32, true);
+                    MultipleBinaryFlag obj = new(32, true);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -78,7 +78,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(32, false);
+                    MultipleBinaryFlag obj = new(32, false);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -91,7 +91,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(17179868704 + 1, true);
+                    MultipleBinaryFlag obj = new(17179868704 + 1, true);
                     Assert.False(true);
                 }
                 catch (ArgumentOutOfRangeException)
@@ -104,7 +104,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(17179868704 + 1, false);
+                    MultipleBinaryFlag obj = new(17179868704 + 1, false);
                     Assert.False(true);
                 }
                 catch (ArgumentOutOfRangeException)
@@ -117,7 +117,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(2 - 1, true);
+                    MultipleBinaryFlag obj = new(2 - 1, true);
                     Assert.False(true);
                 }
                 catch (ArgumentOutOfRangeException)
@@ -130,7 +130,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(2 - 1, false);
+                    MultipleBinaryFlag obj = new(2 - 1, false);
                     Assert.False(true);
                 }
                 catch (ArgumentOutOfRangeException)
@@ -147,7 +147,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, true);
+                    MultipleBinaryFlag obj = new(65 + 1, true);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.True(expected);
@@ -162,7 +162,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
+                    MultipleBinaryFlag obj = new(65 + 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.False(expected);
@@ -177,7 +177,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
+                    MultipleBinaryFlag obj = new(65 - 1, true);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.True(expected);
@@ -192,7 +192,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    MultipleBinaryFlag obj = new(65 - 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.False(expected);
@@ -207,7 +207,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    MultipleBinaryFlag obj = new(33 - 1, true);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.True(expected);
@@ -222,7 +222,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
+                    MultipleBinaryFlag obj = new(33 - 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.False(expected);
@@ -240,7 +240,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, true);
+                    MultipleBinaryFlag obj = new(65 + 123, true);
                     obj.SetFlag(100);
                     Assert.True(true);
                 }
@@ -254,7 +254,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, false);
+                    MultipleBinaryFlag obj = new(65 + 123, false);
                     obj.SetFlag(100);
                     Assert.True(true);
                 }
@@ -268,7 +268,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
+                    MultipleBinaryFlag obj = new(65 - 1, true);
                     obj.SetFlag(50);
                     Assert.True(true);
                 }
@@ -282,7 +282,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    MultipleBinaryFlag obj = new(65 - 1, false);
                     obj.SetFlag(50);
                     Assert.True(true);
                 }
@@ -296,7 +296,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    MultipleBinaryFlag obj = new(33 - 1, true);
                     obj.SetFlag(20);
                     Assert.True(true);
                 }
@@ -310,7 +310,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
+                    MultipleBinaryFlag obj = new(33 - 1, false);
                     obj.SetFlag(20);
                     Assert.True(true);
                 }
@@ -327,7 +327,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, true);
+                    MultipleBinaryFlag obj = new(65 + 123, true);
                     obj.ResetFlag(100);
                     Assert.True(true);
                 }
@@ -341,7 +341,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, false);
+                    MultipleBinaryFlag obj = new(65 + 123, false);
                     obj.ResetFlag(100);
                     Assert.True(true);
                 }
@@ -355,7 +355,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
+                    MultipleBinaryFlag obj = new(65 - 1, true);
                     obj.ResetFlag(50);
                     Assert.True(true);
                 }
@@ -369,7 +369,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    MultipleBinaryFlag obj = new(65 - 1, false);
                     obj.ResetFlag(50);
                     Assert.True(true);
                 }
@@ -383,7 +383,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    MultipleBinaryFlag obj = new(33 - 1, true);
                     obj.ResetFlag(20);
                     Assert.True(true);
                 }
@@ -397,7 +397,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
+                    MultipleBinaryFlag obj = new(33 - 1, false);
                     obj.ResetFlag(20);
                     Assert.True(true);
                 }
@@ -414,7 +414,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    MultipleBinaryFlag obj = new(33 - 1, true);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -428,7 +428,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
+                    MultipleBinaryFlag obj = new(33 - 1, false);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -442,7 +442,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
+                    MultipleBinaryFlag obj = new(65 - 1, true);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -456,7 +456,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    MultipleBinaryFlag obj = new(65 - 1, false);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -470,7 +470,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, true);
+                    MultipleBinaryFlag obj = new(65 + 1, true);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -484,7 +484,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
+                    MultipleBinaryFlag obj = new(65 + 1, false);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -501,7 +501,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    MultipleBinaryFlag obj = new(33 - 1, true);
                     string expected = obj.ToString();
                     Assert.NotNull(expected);
                 }
@@ -515,7 +515,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
+                    MultipleBinaryFlag obj = new(33 - 1, false);
                     string expected = obj.ToString();
                     Assert.NotNull(expected);
                 }
