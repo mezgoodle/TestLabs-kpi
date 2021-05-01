@@ -4,14 +4,20 @@ using IIG.BinaryFlag;
 
 namespace Lab3
 {
-    public class TestBinaryFlag
+    public class MultipleBinaryFlagConstructorTests
     {
         [Fact]
-        public void Test1()
+        public void Route_0_1_3_4_6_8_9()
         {
-            MultipleBinaryFlag obj = new MultipleBinaryFlag(32);
-            Console.WriteLine(obj);
-            Assert.Null(null);
+            try
+            {
+                MultipleBinaryFlag obj = new MultipleBinaryFlag(66);
+                Assert.True(true);
+            }
+            catch (Exception)
+            {
+                Assert.False(true);
+            }
         }
     }
 }
