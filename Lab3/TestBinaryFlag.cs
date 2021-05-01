@@ -1,9 +1,10 @@
 using System;
 using Xunit;
+using IIG.BinaryFlag;
 
 namespace Lab3
 {
-    public class UnitTest1
+    public class TestBinaryFlag
     {
         [Fact]
         public void Test1()

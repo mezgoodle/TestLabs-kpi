@@ -19,4 +19,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="IIG.BinaryFlag">
+      <HintPath>..\IIG.BinaryFlag\IIG.BinaryFlag.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
