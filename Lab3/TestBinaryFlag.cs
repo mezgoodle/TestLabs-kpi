@@ -213,5 +213,50 @@ namespace Lab3
                 }
             }
         }
+        public class DisposeMethodTests
+        {
+            [Fact]
+            public void Route_0_1_4_5()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    obj.Dispose();
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_5()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    obj.Dispose();
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_3_4_5()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1);
+                    obj.Dispose();
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+        }
     }
 }
