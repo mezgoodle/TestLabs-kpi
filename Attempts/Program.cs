@@ -12,7 +12,7 @@ namespace Attempts
         static void Main(string[] args)
         {
             MultipleBinaryFlag obj = new MultipleBinaryFlag(2);
-            Console.WriteLine(obj.ToString());
+            Console.WriteLine(obj);
         }
     }
 }
