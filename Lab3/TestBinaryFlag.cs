@@ -13,7 +13,7 @@ namespace Lab3
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(66);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -71,6 +71,23 @@ namespace Lab3
                 catch (ArgumentOutOfRangeException)
                 {
                     Assert.True(true);
+                }
+            }
+        }
+
+        public class GetFlagMethodTests
+        {
+            [Fact]
+            public void Route_0_1_4_7_11_13()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(66);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
                 }
             }
         }
