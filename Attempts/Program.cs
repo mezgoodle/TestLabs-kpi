@@ -1,5 +1,6 @@
 ﻿using System;
 using IIG.PasswordHashingUtils;
+using IIG.BinaryFlag;
 
 namespace Attempts
 {
@@ -10,14 +11,8 @@ namespace Attempts
     {
         static void Main(string[] args)
         {
-            PasswordHasher hasher = new PasswordHasher();
-            PasswordHasher.Init("dsad", 32);
-            string res = PasswordHasher.GetHash("genji");
-            PasswordHasher.Init("dsad", 33);
-            PasswordHasher.Init("dsa", 32);
-            string res1 = PasswordHasher.GetHash("genji");
-            Console.WriteLine(res);
-            Console.WriteLine(res1);
+            MultipleBinaryFlag obj = new MultipleBinaryFlag(2);
+            Console.WriteLine(obj.ToString());
         }
     }
 }

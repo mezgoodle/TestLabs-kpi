@@ -9,6 +9,8 @@ namespace Lab3
         [Fact]
         public void Test1()
         {
+            MultipleBinaryFlag obj = new MultipleBinaryFlag(32);
+            Console.WriteLine(obj);
             Assert.Null(null);
         }
     }
