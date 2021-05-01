@@ -165,7 +165,7 @@ namespace Lab3
                     MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
-                    Assert.True(expected);
+                    Assert.False(expected);
                 }
                 catch (Exception)
                 {
@@ -195,7 +195,7 @@ namespace Lab3
                     MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
-                    Assert.True(expected);
+                    Assert.False(expected);
                 }
                 catch (Exception)
                 {
@@ -225,7 +225,7 @@ namespace Lab3
                     MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
-                    Assert.True(expected);
+                    Assert.False(expected);
                 }
                 catch (Exception)
                 {
