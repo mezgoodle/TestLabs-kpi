@@ -258,5 +258,22 @@ namespace Lab3
                 }
             }
         }
+        public class ToStringMethodTests
+        {
+            [Fact]
+            public void ToString_NotNull()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    string expected = obj.ToString();
+                    Assert.NotNull(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+        }
     }
 }
