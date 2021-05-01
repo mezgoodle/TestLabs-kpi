@@ -140,14 +140,13 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_4_8_9_10_13()
+            public void Route_0_1_5_6_10_12()
             {
                 try
                 {
                     MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
-                    bool? expected = obj.GetFlag();
-                    Assert.NotNull(expected);
-                    Assert.True(expected);
+                    obj.SetFlag(50);
+                    Assert.True(true);
                 }
                 catch (Exception)
                 {
@@ -155,14 +154,13 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_3_5_13()
+            public void Route_0_1_2_4_12()
             {
                 try
                 {
                     MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
-                    bool? expected = obj.GetFlag();
-                    Assert.NotNull(expected);
-                    Assert.True(expected);
+                    obj.SetFlag(20);
+                    Assert.True(true);
                 }
                 catch (Exception)
                 {
