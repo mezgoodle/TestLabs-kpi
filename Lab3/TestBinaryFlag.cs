@@ -123,5 +123,52 @@ namespace Lab3
                 }
             }
         }
+        public class SetFlagMethodTests
+        {
+            [Fact]
+            public void Route_0_1_5_9_11_12()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123);
+                    obj.SetFlag(100);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_4_8_9_10_13()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    bool? expected = obj.GetFlag();
+                    Assert.NotNull(expected);
+                    Assert.True(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_3_5_13()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    bool? expected = obj.GetFlag();
+                    Assert.NotNull(expected);
+                    Assert.True(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+        }
     }
 }
