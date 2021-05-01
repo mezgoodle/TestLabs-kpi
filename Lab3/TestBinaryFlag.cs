@@ -9,11 +9,11 @@ namespace Lab3
         public class ConstructorTests
         {
             [Fact]
-            public void Route_0_1_3_4_6_8_9()
+            public void Route_0_1_3_4_6_8_9true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, true);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -22,11 +22,11 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_3_4_6_7_9()
+            public void Route_0_1_3_4_6_8_9false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(64);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -35,11 +35,11 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_3_4_5_9()
+            public void Route_0_1_3_4_6_7_9true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(32);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(64, true);
                     Assert.True(true);
                 }
                 catch (Exception)
@@ -48,11 +48,50 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_3_2_9()
+            public void Route_0_1_3_4_6_7_9false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(17179868704 + 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(64, false);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_3_4_5_9true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(32, true);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_3_4_5_9false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(32, false);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_3_2_9true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(17179868704 + 1, true);
                     Assert.False(true);
                 }
                 catch (ArgumentOutOfRangeException)
@@ -61,11 +100,37 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_9()
+            public void Route_0_1_3_2_9false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(2 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(17179868704 + 1, false);
+                    Assert.False(true);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Assert.True(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_9true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(2 - 1, true);
+                    Assert.False(true);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Assert.True(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_9false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(2 - 1, false);
                     Assert.False(true);
                 }
                 catch (ArgumentOutOfRangeException)
@@ -78,11 +143,11 @@ namespace Lab3
         public class GetFlagMethodTests
         {
             [Fact]
-            public void Route_0_1_4_7_11_13()
+            public void Route_0_1_4_7_11_13true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, true);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.True(expected);
@@ -93,11 +158,11 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_4_8_9_10_13()
+            public void Route_0_1_4_7_11_13false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.True(expected);
@@ -108,11 +173,56 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_3_5_13()
+            public void Route_0_1_4_8_9_10_13true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
+                    bool? expected = obj.GetFlag();
+                    Assert.NotNull(expected);
+                    Assert.True(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_4_8_9_10_13false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    bool? expected = obj.GetFlag();
+                    Assert.NotNull(expected);
+                    Assert.True(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_3_5_13true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    bool? expected = obj.GetFlag();
+                    Assert.NotNull(expected);
+                    Assert.True(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_3_5_13false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
                     bool? expected = obj.GetFlag();
                     Assert.NotNull(expected);
                     Assert.True(expected);
@@ -126,11 +236,11 @@ namespace Lab3
         public class SetFlagMethodTests
         {
             [Fact]
-            public void Route_0_1_5_9_11_12()
+            public void Route_0_1_5_9_11_12true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, true);
                     obj.SetFlag(100);
                     Assert.True(true);
                 }
@@ -140,11 +250,25 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_5_6_10_12()
+            public void Route_0_1_5_9_11_12false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, false);
+                    obj.SetFlag(100);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_5_6_10_12true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
                     obj.SetFlag(50);
                     Assert.True(true);
                 }
@@ -154,11 +278,39 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_4_12()
+            public void Route_0_1_5_6_10_12false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    obj.SetFlag(50);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_12true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    obj.SetFlag(20);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_12false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
                     obj.SetFlag(20);
                     Assert.True(true);
                 }
@@ -171,11 +323,11 @@ namespace Lab3
         public class ResetFlagMethodTests
         {
             [Fact]
-            public void Route_0_1_5_9_11_12()
+            public void Route_0_1_5_9_11_12true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, true);
                     obj.ResetFlag(100);
                     Assert.True(true);
                 }
@@ -185,11 +337,25 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_5_6_10_12()
+            public void Route_0_1_5_9_11_12false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123, false);
+                    obj.ResetFlag(100);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_5_6_10_12true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
                     obj.ResetFlag(50);
                     Assert.True(true);
                 }
@@ -199,11 +365,39 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_4_12()
+            public void Route_0_1_5_6_10_12false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    obj.ResetFlag(50);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_12true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    obj.ResetFlag(20);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_12false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
                     obj.ResetFlag(20);
                     Assert.True(true);
                 }
@@ -216,11 +410,11 @@ namespace Lab3
         public class DisposeMethodTests
         {
             [Fact]
-            public void Route_0_1_4_5()
+            public void Route_0_1_4_5true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -230,11 +424,11 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_4_5()
+            public void Route_0_1_4_5false()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -244,11 +438,53 @@ namespace Lab3
                 }
             }
             [Fact]
-            public void Route_0_1_2_3_4_5()
+            public void Route_0_1_2_4_5true()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, true);
+                    obj.Dispose();
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_5false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1, false);
+                    obj.Dispose();
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_3_4_5true()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, true);
+                    obj.Dispose();
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_3_4_5false()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 1, false);
                     obj.Dispose();
                     Assert.True(true);
                 }
@@ -261,11 +497,25 @@ namespace Lab3
         public class ToStringMethodTests
         {
             [Fact]
-            public void ToString_NotNull()
+            public void ToString_NotNulltrue()
             {
                 try
                 {
-                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, true);
+                    string expected = obj.ToString();
+                    Assert.NotNull(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void ToString_NotNullfalse()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1, false);
                     string expected = obj.ToString();
                     Assert.NotNull(expected);
                 }
