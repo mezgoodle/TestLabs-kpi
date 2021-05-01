@@ -168,5 +168,50 @@ namespace Lab3
                 }
             }
         }
+        public class ResetFlagMethodTests
+        {
+            [Fact]
+            public void Route_0_1_5_9_11_12()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 + 123);
+                    obj.ResetFlag(100);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_5_6_10_12()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(65 - 1);
+                    obj.ResetFlag(50);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            [Fact]
+            public void Route_0_1_2_4_12()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new MultipleBinaryFlag(33 - 1);
+                    obj.ResetFlag(20);
+                    Assert.True(true);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+        }
     }
 }
