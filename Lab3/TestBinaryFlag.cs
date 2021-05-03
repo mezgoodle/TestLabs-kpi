@@ -6,8 +6,14 @@ namespace Lab3
 {
     public class MultipleBinaryFlagTests
     {
+        /// <summary>
+        /// Test for constructor method
+        /// </summary>
         public class ConstructorTests
         {
+            /// <summary>
+            /// Test UIntArrayConcreteBinaryFlag object creation
+            /// </summary>
             [Fact]
             public void Route_0_1_3_4_6_8_9true()
             {
@@ -21,6 +27,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test UIntArrayConcreteBinaryFlag object creation
+            /// </summary>
             [Fact]
             public void Route_0_1_3_4_6_8_9false()
             {
@@ -34,6 +43,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ULongConcreteBinaryFlag object creation
+            /// </summary>
             [Fact]
             public void Route_0_1_3_4_6_7_9true()
             {
@@ -47,6 +59,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ULongConcreteBinaryFlag object creation
+            /// </summary>
             [Fact]
             public void Route_0_1_3_4_6_7_9false()
             {
@@ -60,6 +75,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test UIntConcreteBinaryFlag object creation
+            /// </summary>
             [Fact]
             public void Route_0_1_3_4_5_9true()
             {
@@ -73,6 +91,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test UIntConcreteBinaryFlag object creation
+            /// </summary>
             [Fact]
             public void Route_0_1_3_4_5_9false()
             {
@@ -86,6 +107,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ArgumentOutOfRangeException exception
+            /// </summary>
             [Fact]
             public void Route_0_1_3_2_9true()
             {
@@ -99,6 +123,9 @@ namespace Lab3
                     Assert.True(true);
                 }
             }
+            /// <summary>
+            /// Test ArgumentOutOfRangeException exception
+            /// </summary>
             [Fact]
             public void Route_0_1_3_2_9false()
             {
@@ -112,6 +139,9 @@ namespace Lab3
                     Assert.True(true);
                 }
             }
+            /// <summary>
+            /// Test ArgumentOutOfRangeException exception
+            /// </summary>
             [Fact]
             public void Route_0_1_2_9true()
             {
@@ -125,6 +155,9 @@ namespace Lab3
                     Assert.True(true);
                 }
             }
+            /// <summary>
+            /// Test ArgumentOutOfRangeException exception
+            /// </summary>
             [Fact]
             public void Route_0_1_2_9false()
             {
@@ -142,6 +175,9 @@ namespace Lab3
 
         public class GetFlagMethodTests
         {
+            /// <summary>
+            /// Test GetFlag method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_4_7_11_13true()
             {
@@ -157,6 +193,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test GetFlag method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_4_7_11_13false()
             {
@@ -172,6 +211,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test GetFlag method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_4_8_9_10_13true()
             {
@@ -187,6 +229,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test GetFlag method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_4_8_9_10_13false()
             {
@@ -202,6 +247,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test GetFlag method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_3_5_13true()
             {
@@ -217,6 +265,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test GetFlag method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_3_5_13false()
             {
@@ -235,6 +286,9 @@ namespace Lab3
         }
         public class SetFlagMethodTests
         {
+            /// <summary>
+            /// Test SetFlag method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_9_11_12true()
             {
@@ -249,6 +303,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test SetFlag method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_9_11_12false()
             {
@@ -263,6 +320,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test SetFlag method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_6_10_12true()
             {
@@ -277,6 +337,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test SetFlag method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_6_10_12false()
             {
@@ -291,6 +354,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test SetFlag method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_4_12true()
             {
@@ -305,6 +371,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test SetFlag method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_4_12false()
             {
@@ -322,6 +391,9 @@ namespace Lab3
         }
         public class ResetFlagMethodTests
         {
+            /// <summary>
+            /// Test ResetFlag method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_9_11_12true()
             {
@@ -336,6 +408,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ResetFlag method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_9_11_12false()
             {
@@ -350,6 +425,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ResetFlag method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_6_10_12true()
             {
@@ -364,6 +442,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ResetFlag method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_5_6_10_12false()
             {
@@ -378,6 +459,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ResetFlag method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_4_12true()
             {
@@ -392,6 +476,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ResetFlag method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_4_12false()
             {
@@ -409,6 +496,9 @@ namespace Lab3
         }
         public class DisposeMethodTests
         {
+            /// <summary>
+            /// Test Dispose method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_4_5true()
             {
@@ -423,6 +513,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test Dispose method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_4_5false()
             {
@@ -437,6 +530,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test Dispose method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_4_5true()
             {
@@ -451,6 +547,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test Dispose method with ULongConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_4_5false()
             {
@@ -465,6 +564,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test Dispose method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_3_4_5true()
             {
@@ -479,6 +581,9 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test Dispose method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
             [Fact]
             public void Route_0_1_2_3_4_5false()
             {
@@ -496,8 +601,11 @@ namespace Lab3
         }
         public class ToStringMethodTests
         {
+            /// <summary>
+            /// Test ToString method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
-            public void ToString_NotNulltrue()
+            public void ToString_UIntConcreteBinaryFlag_NotNulltrue()
             {
                 try
                 {
@@ -510,8 +618,11 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ToString method with UIntConcreteBinaryFlag object
+            /// </summary>
             [Fact]
-            public void ToString_NotNullfalse()
+            public void ToString_UIntConcreteBinaryFlag_NotNullfalse()
             {
                 try
                 {
