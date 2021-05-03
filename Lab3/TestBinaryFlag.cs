@@ -635,6 +635,74 @@ namespace Lab3
                     Assert.False(true);
                 }
             }
+            /// <summary>
+            /// Test ToString method with ULongConcreteBinaryFlag object
+            /// </summary>
+            [Fact]
+            public void ToString_ULongConcreteBinaryFlag_NotNulltrue()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new(65 - 1, true);
+                    string expected = obj.ToString();
+                    Assert.NotNull(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            /// <summary>
+            /// Test ToString method with ULongConcreteBinaryFlag object
+            /// </summary>
+            [Fact]
+            public void ToString_ULongConcreteBinaryFlag_NotNullfalse()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new(65 - 1, false);
+                    string expected = obj.ToString();
+                    Assert.NotNull(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            /// <summary>
+            /// Test ToString method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
+            [Fact]
+            public void ToString_UIntArrayConcreteBinaryFlag_NotNulltrue()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new(65 + 1, true);
+                    string expected = obj.ToString();
+                    Assert.NotNull(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
+            /// <summary>
+            /// Test ToString method with UIntArrayConcreteBinaryFlag object
+            /// </summary>
+            [Fact]
+            public void ToString_UIntArrayConcreteBinaryFlag_NotNullfalse()
+            {
+                try
+                {
+                    MultipleBinaryFlag obj = new(65 + 1, false);
+                    string expected = obj.ToString();
+                    Assert.NotNull(expected);
+                }
+                catch (Exception)
+                {
+                    Assert.False(true);
+                }
+            }
         }
     }
 }
