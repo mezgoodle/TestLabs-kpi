@@ -6,7 +6,7 @@ namespace TestLabsXUnit
     /// <summary>
     /// Sandbox for tests with XUnit
     /// </summary>
-    public class UnitTest1
+    public class Tests
     {
         [Fact]
         public void Test1()
