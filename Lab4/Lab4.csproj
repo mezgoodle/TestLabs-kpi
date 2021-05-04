@@ -19,4 +19,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="IIG.DatabaseConnectionUtils">
+      <HintPath>..\IIG.DatabaseConnectionUtils\IIG.DatabaseConnectionUtils\IIG.DatabaseConnectionUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="IIG.PasswordHashingUtils">
+      <HintPath>..\IIG.PasswordHashingUtils\IIG.PasswordHashingUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
