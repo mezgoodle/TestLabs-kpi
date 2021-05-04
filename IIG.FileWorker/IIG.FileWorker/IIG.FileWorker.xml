@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IIG.FileWorker</name>
+    </assembly>
+    <members>
+        <member name="M:IIG.FileWorker.BaseFileWorker.ReadLines(System.String)">
+            <summary>
+                Reads lines from given path
+            </summary>
+            <param name="path">Array of read string</param>
+            <returns></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.ReadAll(System.String)">
+            <summary>
+                Reads file as text
+            </summary>
+            <param name="path">Content of file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.Write(System.String,System.String)">
+            <summary>
+                Writes text to file
+            </summary>
+            <param name="text">Text to write</param>
+            <param name="path">Path to file</param>
+            <returns>Result of write: <see langword="true" /> if success, otherwise - <see langword="false" /></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.TryWrite(System.String,System.String,System.Int32)">
+            <summary>
+                Tries to write text given number of times
+            </summary>
+            <param name="text">Text to write</param>
+            <param name="path">Path to file</param>
+            <param name="tries">Number of tries</param>
+            <returns>Result of write: <see langword="true" /> if success, otherwise - <see langword="false" /></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.TryCopy(System.String,System.String,System.Boolean,System.Int32)">
+            <summary>
+                Tries to Copy Source File to Destination File
+            </summary>
+            <param name="from">Source File</param>
+            <param name="to">Destination File</param>
+            <param name="rewrite">Rewrite Destination File Flag</param>
+            <param name="tries">Number of tries</param>
+            <returns>Result of copy: <see langword="true" /> if success, otherwise - <see langword="false" /></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.GetFullPath(System.String)">
+            <summary>
+                Returns Full Path of Given Path
+            </summary>
+            <param name="path">Path</param>
+            <returns>Full Path if success, otherwise - <see langword="null" /></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.GetFileName(System.String)">
+            <summary>
+                Returns File Name from Given Path
+            </summary>
+            <param name="path">Path</param>
+            <returns>File Name if success, otherwise - <see langword="null" /></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.GetPath(System.String)">
+            <summary>
+                Returns Directory Path of Given Path
+            </summary>
+            <param name="path">Path</param>
+            <returns>Directory Path if success, otherwise - <see langword="null" /></returns>
+        </member>
+        <member name="M:IIG.FileWorker.BaseFileWorker.MkDir(System.String)">
+            <summary>
+                Creates Directory
+            </summary>
+            <param name="name">Directory Name</param>
+            <returns>Full Path if success, otherwise - <see langword="null" /></returns>
+        </member>
+    </members>
+</doc>

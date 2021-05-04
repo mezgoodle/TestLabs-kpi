@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IIG.DatabaseConnectionUtils</name>
+    </assembly>
+    <members>
+        <member name="T:IIG.DatabaseConnectionUtils.DatabaseConnection">
+            <summary>
+                Contains methods for Database Connection and SQL Execution
+            </summary>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+                Create DatabaseConnection with Application Settings Input parameter
+            </summary>
+            <param name="appSettings">Application Settings</param>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.#ctor(System.String,System.String,System.Boolean,System.String,System.String,System.Int32)">
+            <summary>
+                Create DatabaseConnection with Database Connection Parameters
+            </summary>
+            <param name="server">Server Path</param>
+            <param name="database">Database Name</param>
+            <param name="isTrusted">Trusted_Connection Parameter Value</param>
+            <param name="login">Login</param>
+            <param name="password">Password</param>
+            <param name="connectionTimeOut">Connection Timeout</param>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.SetConnectionString">
+            <summary>
+                Return Value of the Connection String. Sets Connection String if it is Null or Empty.
+            </summary>
+            <returns>String Value of the ConnectionString</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.ConnectToDatabase">
+            <summary>
+                Attempts to Connect to Database
+            </summary>
+            <returns>The Result of the Attempt to Connect</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.Reconnect">
+            <summary>
+                Attempts to Reconnect
+            </summary>
+            <returns>The Result of the Attempt to Reconnect</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.ExecSql(System.String,System.Boolean)">
+            <summary>
+                Executes Given SQL Script
+            </summary>
+            <param name="sql">SQL Script</param>
+            <param name="proc">Does SQL Contains Stored Procedure Execution</param>
+            <returns><see langword="false" /> - if Error on Execute Occured, Otherwise - <see langword="true" /></returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.GetBoolBySql(System.String)">
+            <summary>
+                Get Boolean by SQL Script
+            </summary>
+            <param name="sql">SQL Script, which Should Return Boolean Result</param>
+            <returns>Result of SQL Script or <see langword="null" /> if Error Occured</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.GetIntBySql(System.String)">
+            <summary>
+                Get Integer by SQL Script
+            </summary>
+            <param name="sql">SQL Script, which Should Return Integer Result</param>
+            <returns>Result of SQL script or <see langword="null" /> if Error Occured</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.GetStrBySql(System.String)">
+            <summary>
+                Get String by SQL Script
+            </summary>
+            <param name="sql">SQL Script, which Should Return String Result</param>
+            <returns>Result of SQL Script</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.GetLstBySql(System.String)">
+            <summary>
+                Get Array Result by SQL Script
+            </summary>
+            <param name="sql">SQL Script, which Should Return Array Result</param>
+            <returns>Result of SQL Script</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.GetDataTableBySql(System.String)">
+            <summary>
+                Get Data Table by SQL Script
+            </summary>
+            <param name="sql">SQL Script, that Should Return Data Table Result</param>
+            <returns>Result of SQL Script</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.ExecSqlProcedureWithBoolAndMessageOutputParameters(System.Data.SqlClient.SqlCommand,System.String@)">
+            <summary>
+                Method that Executes Procedure with Bool and Message Output Parameters
+            </summary>
+            <param name="sqlCommand">SqlCommand to Execute</param>
+            <param name="message">Message Returned from Database after SqlCommand Execution</param>
+            <returns>Shows was SqlCommand Executed Successfully or Not</returns>
+        </member>
+        <member name="M:IIG.DatabaseConnectionUtils.DatabaseConnection.ExecSqlProcedureWithCommonOutputParameters(System.Data.SqlClient.SqlCommand,System.Int32@,System.String@)">
+            <summary>
+                Method that Executes Procedure with three "Common" Output Parameters
+            </summary>
+            <param name="sqlCommand">SqlCommand to Execute</param>
+            <param name="errorType">Type of Error</param>
+            <param name="message">Error Message</param>
+            <returns>Shows was SqlCommand Executed Successfully or Not</returns>
+        </member>
+    </members>
+</doc>
