@@ -8,12 +8,12 @@ namespace Lab4
 {
 	class Program
 	{
-		private const string Server = @"GOVERLA2";
+		private const string Server = @"GOVERLA2\SQLEXPRESS";
 		private const string StorageDatabase = @"IIG.CoSWE.StorageDB";
 		private const bool IsTrusted = true;
 		private const string Login = @"coswe";
 		private const string Password = @"L}EjpfCgru9X@GLj";
-		private const int ConnectionTimeout = 75;
+		private const int ConnectionTimeout = 20;
 
 		static StorageDatabaseUtils storageDatabase = new(Server, StorageDatabase,
 			IsTrusted, Login, Password, ConnectionTimeout);

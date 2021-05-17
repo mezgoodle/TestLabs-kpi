@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="IIG.BinaryFlag">
       <HintPath>..\IIG.BinaryFlag\IIG.BinaryFlag.dll</HintPath>
     </Reference>
