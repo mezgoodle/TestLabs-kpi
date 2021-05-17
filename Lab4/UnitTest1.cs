@@ -32,7 +32,7 @@ namespace Lab4
 
 			Console.WriteLine(storageDatabase.AddFile("SomeCoolName.txt", bytes));
 
-			Console.WriteLine(storageDatabase.GetFile(6, out string newName,
+			Console.WriteLine(storageDatabase.GetFile(1, out string newName,
 				out byte[] newBytes));
 
 			string newArray = Encoding.UTF8.GetString(newBytes);
