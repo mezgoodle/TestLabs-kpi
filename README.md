@@ -9,5 +9,9 @@ My labs for testing software in KPI
 * [Second lab](https://github.com/mezgoodle/TestLabs-kpi/tree/master/Lab2)
 * [Third lab](https://github.com/mezgoodle/TestLabs-kpi/tree/master/Lab3)
 
+## Credits
+
+- [Author of the libraries](https://github.com/IGORGOD)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
