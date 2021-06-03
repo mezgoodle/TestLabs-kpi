@@ -37,5 +37,53 @@ namespace Lab4
             int? flagIDEmpty = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
             Assert.Null(flagIDEmpty);
         }
+
+        [Fact]
+        public void MinimumFalseFlag()
+        {
+            MultipleBinaryFlag actualFlag = new MultipleBinaryFlag(2, false);
+            binaryFlagDatabase.AddFlag(actualFlag.ToString(), (bool)actualFlag.GetFlag());
+            int? flagIDNew = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
+            Assert.NotNull(flagIDNew);
+            bool newFlag = binaryFlagDatabase.GetFlag((int)flagIDNew, out string flagView, out bool? flagValue);
+            Assert.True(newFlag);
+            Assert.Equal(flagView, actualFlag.ToString());
+            Assert.Equal(flagValue, actualFlag.GetFlag());
+            binaryFlagDatabase.ExecSql("DELETE FROM MultipleBinaryFlags WHERE MultipleBinaryFlagID=" + flagIDNew);
+            int? flagIDEmpty = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
+            Assert.Null(flagIDEmpty);
+        }
+
+        [Fact]
+        public void MaximumTrueFlag()
+        {
+            MultipleBinaryFlag actualFlag = new MultipleBinaryFlag(100000, true);
+            binaryFlagDatabase.AddFlag(actualFlag.ToString(), (bool)actualFlag.GetFlag());
+            int? flagIDNew = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
+            Assert.NotNull(flagIDNew);
+            bool newFlag = binaryFlagDatabase.GetFlag((int)flagIDNew, out string flagView, out bool? flagValue);
+            Assert.True(newFlag);
+            Assert.Equal(flagView, actualFlag.ToString());
+            Assert.Equal(flagValue, actualFlag.GetFlag());
+            binaryFlagDatabase.ExecSql("DELETE FROM MultipleBinaryFlags WHERE MultipleBinaryFlagID=" + flagIDNew);
+            int? flagIDEmpty = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
+            Assert.Null(flagIDEmpty);
+        }
+
+        [Fact]
+        public void MaximumFalseFlag()
+        {
+            MultipleBinaryFlag actualFlag = new MultipleBinaryFlag(100000, false);
+            binaryFlagDatabase.AddFlag(actualFlag.ToString(), (bool)actualFlag.GetFlag());
+            int? flagIDNew = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
+            Assert.NotNull(flagIDNew);
+            bool newFlag = binaryFlagDatabase.GetFlag((int)flagIDNew, out string flagView, out bool? flagValue);
+            Assert.True(newFlag);
+            Assert.Equal(flagView, actualFlag.ToString());
+            Assert.Equal(flagValue, actualFlag.GetFlag());
+            binaryFlagDatabase.ExecSql("DELETE FROM MultipleBinaryFlags WHERE MultipleBinaryFlagID=" + flagIDNew);
+            int? flagIDEmpty = binaryFlagDatabase.GetIntBySql("SELECT MAX(MultipleBinaryFlagID) FROM MultipleBinaryFlags");
+            Assert.Null(flagIDEmpty);
+        }
     }
 }
