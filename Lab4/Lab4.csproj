@@ -21,8 +21,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="IIG.BinaryFlag">
+      <HintPath>..\IIG.BinaryFlag\IIG.BinaryFlag.dll</HintPath>
+    </Reference>
     <Reference Include="IIG.DatabaseConnectionUtils">
       <HintPath>..\IIG.DatabaseConnectionUtils\IIG.DatabaseConnectionUtils\IIG.DatabaseConnectionUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="IIG.FileWorker">
+      <HintPath>..\IIG.FileWorker\IIG.FileWorker\IIG.FileWorker.dll</HintPath>
     </Reference>
     <Reference Include="IIG.PasswordHashingUtils">
       <HintPath>..\IIG.PasswordHashingUtils\IIG.PasswordHashingUtils.dll</HintPath>
